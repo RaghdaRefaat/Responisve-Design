@@ -1,0 +1,389 @@
+/*
+    =======================================
+            Public Style
+    =======================================
+*/
+
+* , *:after , *:before{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: ucida sans ;
+}
+
+.container{
+    width: 85% ;
+    margin: auto;
+}
+
+:root{
+    --mainColor: #398d01 ;
+    --lightGreen: #91db5f;
+    --whiteColor: #fff;
+    --grayColor: #999;
+    --darkColor: #222;
+    --darkGray: #5e5e5e;
+    --lightGray: #e8e8e8;
+}
+
+.mg{
+    margin: 0 6px;
+}
+
+.pd-y{
+    padding: 1em 0;
+}
+
+/*
+    =======================================
+            NavBar Styles
+    =======================================
+*/
+
+.navBar{
+    padding: 1em 0;
+    background-color: var(--whiteColor);
+    overflow: hidden;
+    position: relative;
+}
+
+.logo{
+    width: 40%;
+    float: left;
+    font-size: 1.5em;
+}
+
+.navBar input , .navBar label{
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+.navBar input{
+    display: none;
+}
+
+.navBar label{
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: url(../images/Navbar/open.png) no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    padding: 20px;
+
+}
+
+.navBar input:checked ~ .links-list{
+    display: block;
+}
+
+.navBar input:checked ~ label{
+    background: url(../images/Navbar/close.png) no-repeat;
+    background-size: cover;
+}
+
+.links-list{
+    float: left;
+    width: 60%;
+}
+
+.list-item{
+    display: inline-block; 
+}
+
+.list-item a{
+    display: block;
+    color: var(--darkColor);
+    text-decoration: none;
+    padding: 0.5em 1em;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.list-item a:hover{
+    color: var(--mainColor);
+}
+
+/* Media for navBar */
+
+@media (min-width : 992px){
+    .navBar label{
+        display: none;
+    }
+}
+
+/*for all screens except the large one */
+@media (max-width : 991px){
+
+    .logo{
+        width: 100%;
+        float: none;
+    }
+    .links-list{
+        float: none;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+    .list-item{
+        display: block; 
+    }
+}
+
+/*
+    =======================================
+            Home Section Styles
+    =======================================
+*/
+
+.home{
+    background: url(../images/Home/home-bg.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 30em;
+    background-position: center;
+}
+
+.homeContent{
+    margin: auto;
+    width: 60%;
+}
+
+.homeContent span{
+    color: var(--mainColor);
+}
+
+.homeHeader{
+    text-align: center;
+    font-size: 4em;
+    color: var(--darkGray);
+    padding-top: 1em;
+    text-decoration: none;
+    text-transform: capitalize;
+
+}
+
+.homeTitle{
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--mainColor);
+    text-transform: uppercase;
+    padding: 0.5em 0 1.5em 0;
+
+}
+
+.homeDesc{
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 1.6;
+    margin-bottom: 3em;
+}
+
+.homeDesc span{
+    font-weight: bold;
+}
+
+.homeBTN{
+    display: block;
+    margin: auto;
+    width: 7em;
+    font-size: 1.3em;
+    padding: 0.5em;
+    background-color: var(--mainColor);
+    color: var(--whiteColor);
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    transition: color 0.5s;
+    font-weight: bold;
+}
+
+.homeBTN:hover{
+    background-color: var(--lightGreen);
+    color: var(--mainColor);
+}
+
+@media (max-width: 1060px){
+    .homeHeader{
+        font-size: 30px;
+        color: var(--whiteColor);
+    }
+    .homeTitle{
+        font-size: 20px;
+    }
+}
+
+/*
+    =======================================
+            Work Section Styles
+    =======================================
+*/
+
+.work{
+    padding: 2em;
+}
+
+.workHeader{
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.workHeader span{
+    font-weight: normal;
+}
+
+.workContent{
+    overflow: hidden;
+}
+
+.workItem{
+    width: 30%;
+    height: 25em;
+    float: left;
+    padding: 4em 0.5em;
+    text-align: center;
+    border: 1px solid var(--mainColor);
+    box-sizing: border-box;
+}
+
+.workItem .icon{
+    color: var(--darkGray);
+    margin-bottom: 1em;
+}
+
+.workItemTitle{
+    padding-bottom: 0.5em;
+    font-size: 2em;
+    color: var(--mainColor);
+}
+
+.workItemDesc{
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+.line{
+    width: 30%;
+    margin: auto;
+    margin-bottom: 2em;
+}
+
+@media (max-width : 575px){
+    .workItem{
+        float: none;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    .workItem.mg{
+        margin: 1em 0;
+    }
+}
+
+@media  (min-width : 576px) and (max-width : 880px){
+
+    .workItem{
+        width: 45%;
+        margin: 0 1.5em 1em 0;
+    }
+}
+
+/*
+    =======================================
+            Portfolio Section Styles
+    =======================================
+*/
+
+.portfolio{
+    background-color: var(--lightGray);
+}
+
+.portfolioHeader{
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5em 0 1em 0;
+    margin-top: 1em;
+}
+
+.portfolioHeader span{
+    font-weight: normal;
+}
+
+.portfolioList{
+    list-style: none;
+    text-align: center;
+}
+
+.portfolioListItem{
+    display: inline-block;
+    margin: 0 1em 1.5em 1em;
+    padding: 0.5em;
+    color: var(--grayColor);
+    transition: color 0.5s;
+}
+
+.portfolioListItem:hover{
+    background-color: var(--mainColor);
+    color: var(--whiteColor);
+}
+
+.portfolioContent{
+    overflow: hidden;
+}
+
+.portfolioImg{
+    width: 25%;
+    float: left;
+    font-size: 0;
+    position: relative;
+}
+
+.portfolioImg img{
+    width: 100%;
+}
+
+.overlay{
+    font-size: 1rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: rgba(57, 141, 1, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+}
+
+.overlayBTN{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--whiteColor);
+    padding: 0.5rem;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--mainColor);
+    color: var(--whiteColor);
+    cursor: pointer;
+}
+
+.portfolioImg:hover .overlay{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+@media (max-width : 700px){
+    .portfolioImg{
+        width: 50%;
+    }
+}
